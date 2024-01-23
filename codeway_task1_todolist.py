@@ -288,9 +288,9 @@ def my_todolist():
             print('Warning! Please enter the correct choice')
             continue
     import time
-    time.sleep(5)
+    time.sleep(4)
     print()
     print('THANK YOU!')
     print('\n\nCreated by-')
-    print('ANANYA SHARMA\n XI-B\n')
+    print('ANANYA SHARMA\n')
 my_todolist()
