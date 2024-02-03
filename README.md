@@ -9,5 +9,4 @@ cases that a user can enter. This project provides users with features like:
 2. Add tasks to it
 3. Delete task from it
 4. Mark any task as 'done'
-Here, I look forward to including the concept of file handling in the future to keep our to-do lists 
-saved and also to try it on GUI.
+Here, I look forward to including the concept of file handling in the future to keep our to-do lists saved and also to try it on GUI.
