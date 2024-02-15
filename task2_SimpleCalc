@@ -1,0 +1,70 @@
+from tkinter import *
+root= Tk()
+root.title("Simple Calculator")
+en= Entry(root,width=20,font=('Courier New',20), borderwidth=12)
+en.grid(row=0,column=0,columnspan=5,padx=16,pady=10)
+
+def clear():
+    en.delete(0,END)
+    
+def click(val):
+    if(en.get()=='Error'):
+        en.delete(0,END)
+    current=en.get()
+    en.delete(0,END)
+    en.insert(0,str(current)+val)
+    
+def equal():
+    try:
+        current=en.get()
+        en.delete(0,END)
+        ans=eval(current)
+        en.insert(0,str(ans))
+    except:
+        en.insert(0,'Error')
+
+    
+
+#button definitions
+b1=Button(root, text="1", font=('Courier New',20), padx=30, pady=20, bg="yellow", command=lambda: click('1'))
+b2=Button(root, text="2", font=('Courier New',20), padx=30, pady=20, bg="yellow", command=lambda: click('2'))
+b3=Button(root, text="3", font=('Courier New',20), padx=30, pady=20, bg="yellow", command=lambda: click('3'))
+b4=Button(root, text="4", font=('Courier New',20), padx=30, pady=20, bg="yellow", command=lambda: click('4'))
+b5=Button(root, text="5", font=('Courier New',20), padx=30, pady=20, bg="yellow", command=lambda: click('5'))
+b6=Button(root, text="6", font=('Courier New',20), padx=30, pady=20, bg="yellow", command=lambda: click('6'))
+b7=Button(root, text="7", font=('Courier New',20), padx=30, pady=20, bg="yellow", command=lambda: click('7'))
+b8=Button(root, text="8", font=('Courier New',20), padx=30, pady=20, bg="yellow", command=lambda: click('8'))
+b9=Button(root, text="9", font=('Courier New',20), padx=30, pady=20, bg="yellow", command=lambda: click('9'))
+b0=Button(root, text="0", font=('Courier New',20), padx=82, pady=19, bg="yellow", command=lambda: click('0'))
+
+bequal=Button(root, text="=", font=('Courier New',20), padx=77, pady=19, bg="light blue", command=equal)
+bclear=Button(root, text="Clear", font=('Courier New',20), padx=51, pady=17, bg="red", command=clear)
+
+bdot=Button(root, text=".", font=('Courier New',20), padx=31, pady=19, bg="light pink", command=lambda: click('.'))
+badd=Button(root, text="+", font=('Courier New',20), padx=30, pady=20, bg="light green", command=lambda: click('+'))
+bsub=Button(root, text="-", font=('Courier New',20), padx=30, pady=20, bg="light green", command=lambda: click('-'))
+bmul=Button(root, text="*", font=('Courier New',20), padx=30, pady=20, bg="light green", command=lambda: click('*'))
+bdiv=Button(root, text="/", font=('Courier New',20), padx=30, pady=19, bg="light green", command=lambda: click('/'))
+
+
+#displaying buttons on screen
+b1.grid(row=3, column=0)
+b2.grid(row=3, column=1)
+b3.grid(row=3, column=2)
+b4.grid(row=2, column=0)
+b5.grid(row=2, column=1)
+b6.grid(row=2, column=2)
+b7.grid(row=1, column=0)
+b8.grid(row=1, column=1)
+b9.grid(row=1, column=2)
+b0.grid(row=4, column=0, columnspan=2)
+
+badd.grid(row=1, column=3)
+bsub.grid(row=2, column=3)
+bmul.grid(row=3, column=3)
+bdiv.grid(row=4, column=3)
+
+bdot.grid(row=4, column=2, columnspan=1)
+bequal.grid(row=5, column=2, columnspan=2)
+bclear.grid(row=5, column=0, columnspan=2)
+root.mainloop()
